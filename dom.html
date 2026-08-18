@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<title>DOM Manipulation</title>
+<style>
+	.box {
+	background-color: lightblue;
+	border: 3px solid green;
+	border-radius: 15px;
+	padding: 25px;
+	}
+
+	.newbox {
+ 	background-color: lightpink;
+ 	border: 20px solid green;
+ 	border-radius: 20px;
+ 	padding: 50px;
+	}
+</style>
+
+</head>
+<body>
+	<div class="box" id="box">
+	<h2 id="title">Welcome Students</h2>
+	<p id="message"></p>
+
+	<img id="myImage" src="https://picsum.photos/600/400?random=10" width="300"><br><br>
+	<a href="https://www.google.com" target="_blank">Visit Google</a><br><br>
+
+	<button onclick="changestyle()">Change Style</button><br><br>
+	<button onclick="changecontent()">Change Content</button><br><br>
+	<button onclick="changelink()">Change Link</button><br><br>
+	<button onclick="changeimage()">Change Image</button><br><br>
+	<button onclick="changeclass()">Change Class</button><br><br>
+
+	</div>
+<script>
+
+function changestyle() {
+    document.getElementById("box").style.backgroundColor = "lightblue";
+    document.getElementById("box").style.padding = "20px";
+    document.getElementById("title").style.color = "red";
+    document.getElementById("title").style.fontSize = "30px";
+}
+
+function changecontent() {
+    document.getElementById("title").innerHTML = "Hello Students!";
+    document.getElementById("message").innerHTML = "The content has been changed using JavaScript DOM manipulation.";
+}
+
+function changelink() {
+    let link = document.querySelector("a");
+
+    link.href = "https://www.wikipedia.org";
+    link.innerHTML = "Visit Wikipedia";
+}
+
+function changeimage() {
+    document.getElementById("myImage").src =
+        "https://picsum.photos/600/400?random=20";
+}
+
+function changeclass() {
+    document.getElementById("box").classList.add("newbox");
+}
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

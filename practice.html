@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<title>DOM Manipulation</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    .box {
+        width: 600px;
+        padding: 35px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.95);
+        border: none;
+        border-radius: 25px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        transition: all 0.4s ease;
+    }
+
+    .box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #4f46e5;
+        font-size: 32px;
+    }
+
+    #message {
+        min-height: 25px;
+        color: #555;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    #myImage {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 15px;
+        border: 4px solid #fff;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+    #myImage:hover {
+        transform: scale(1.05);
+    }
+
+    a {
+        display: inline-block;
+        margin: 15px 0;
+        color: #4f46e5;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: #764ba2;
+        text-decoration: underline;
+    }
+
+    button {
+        width: 220px;
+        padding: 12px 18px;
+        margin: 5px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.5);
+    }
+
+    button:active {
+        transform: scale(0.96);
+    }
+
+    .newbox {
+        background: linear-gradient(135deg, #ffe4ec, #ffd1dc);
+        border: 4px solid #ec4899;
+        border-radius: 25px;
+        padding: 40px;
+        box-shadow: 0 20px 50px rgba(236, 72, 153, 0.3);
+    }
+
+    .newbox h2 {
+        color: #db2777;
+    }
+</style>
+
+
+</head>
+<body>
+	<div class="box" id="box">
+	<h2 id="title">Welcome Students</h2>
+	<p id="message"></p>
+
+	<img id="myImage" src="https://picsum.photos/600/400?random=10" width="300"><br><br>
+	<a href="https://www.google.com" target="_blank">Visit Google</a><br><br>
+
+	<button onclick="changestyle()">Change Style</button><br>
+	<button onclick="changecontent()">Change Content</button>
+	<button onclick="changelink()">Change Link</button>
+	<button onclick="changeimage()">Change Image</button>
+	<button onclick="changeclass()">Change Class</button>
+
+	</div>
+<script>
+
+function changestyle() {
+    document.getElementById("box").style.backgroundColor = "lightblue";
+    document.getElementById("box").style.padding = "20px";
+    document.getElementById("title").style.color = "red";
+    document.getElementById("title").style.fontSize = "30px";
+}
+
+function changecontent() {
+    document.getElementById("title").innerHTML = "Hello Students!";
+    document.getElementById("message").innerHTML = "The content has been changed using JavaScript DOM manipulation.";
+}
+
+function changelink() {
+    let link = document.querySelector("a");
+
+    link.href = "https://www.wikipedia.org";
+    link.innerHTML = "Visit Wikipedia";
+}
+
+function changeimage() {
+    document.getElementById("myImage").src =
+        "https://picsum.photos/600/400?random=20";
+}
+
+function changeclass() {
+    document.getElementById("box").classList.add("newbox");
+}
+
+</script>
+
+
+</body>
+</html>
