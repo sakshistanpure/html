@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript DOM</title>
+
+    <style>
+        body {
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .box {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px gray;
+        }
+
+        img {
+            border-radius: 10px;
+        }
+
+        button {
+            background: #673ab7;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .newClass {
+            color: #e91e63;
+            font-size: 32px;
+        }
+    </style>
+</head>
+
+<body id="page">
+
+    <div class="box">
+
+        <h1 id="heading">My Web Page</h1>
+
+        <p id="para">Welcome to my webpage!</p>
+
+        <img id="photo"
+             src="https://www.w3schools.com/html/img_girl.jpg"
+             width="200">
+
+        <p>
+            <a id="link" href="https://www.google.com">
+                Visit Google
+            </a>
+        </p>
+
+        <button onclick="changePage()">Click Me</button>
+
+    </div>
+
+    <script>
+
+        function changePage() {
+
+            document.getElementById("heading").innerHTML =
+                "Welcome to JavaScript!";
+
+            document.getElementById("para").innerHTML =
+                "Content changed successfully!";
+
+            document.getElementById("photo").src =
+                "https://www.w3schools.com/html/img_chania.jpg";
+
+            document.getElementById("link").href =
+                "https://www.w3schools.com/";
+
+            document.getElementById("link").innerHTML =
+                "Learn at W3Schools";
+
+            document.getElementById("page").style.backgroundColor =
+                "#ffd6e7";
+
+            document.getElementById("para").style.fontSize =
+                "22px";
+
+            document.getElementById("heading").className =
+                "newClass";
+        }
+
+    </script>
+
+</body>
+
+</html>
+
