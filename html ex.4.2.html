@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+</head>
+
+<body>
+
+    <center>
+
+        <br><br>
+
+        <fieldset>
+            <legend>
+                <h1>📝 Registration Form</h1>
+            </legend>
+
+            <form onsubmit="return validateForm()">
+
+                <table cellpadding="10">
+
+                    <tr>
+                        <td><b>👤 Name:</b></td>
+                        <td>
+                            <input type="text"
+                                   id="name"
+                                   placeholder="Enter your name">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><b>📧 Email:</b></td>
+                        <td>
+                            <input type="email"
+                                   id="email"
+                                   placeholder="Enter your email">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+
+                            <input type="submit"
+                                   value="✅ Submit"
+                                   onclick="alert('Submit button clicked')"
+                                   onmouseover="alert('Mouse is over the button')">
+
+                            <input type="reset"
+                                   value="🔄 Reset">
+
+                        </td>
+                    </tr>
+
+                </table>
+
+            </form>
+
+        </fieldset>
+
+        <br>
+
+        <h3>✨ Please fill all details carefully ✨</h3>
+
+    </center>
+
+    <script>
+
+        function validateForm() {
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+
+            if (name == "") {
+                alert("⚠️ Please enter your name");
+                return false;
+            }
+
+            if (email == "") {
+                alert("⚠️ Please enter your email");
+                return false;
+            }
+
+            alert("🎉 Registration Successful!");
+            return true;
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+
